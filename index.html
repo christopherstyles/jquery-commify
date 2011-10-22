@@ -1,31 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>jQuery Commify</title>
+  
+  <title>jQuery - Commify</title>
+  
   <meta name="description" content="The jQuery Commify extension provides an easy way to add commas to numbers without them.">
   <meta name="author" content="Christopher Styles">
-
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+  
   <link rel="apple-touch-icon" href="icon/jquery-commify.png"/>
   <link rel="icon" href="icon/jquery-commify.ico">
   
-  <!-- CSS: implied media=all -->
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- end CSS-->
+  <style type="text/css" media="screen">
+    body{
+      margin: 0; font-size: 13px; line-height: 1.231;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    #main {
+      padding: 25px;
+    }
+    .demo-number {
+      
+    }
+    .cf:before, .cf:after { content: ""; display: table; }
+    .cf:after { clear: both; }
+    .cf { zoom: 1; }
+  </style>
 
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
-       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
 <body>
@@ -35,73 +40,22 @@
 
     </header>
     <div id="main" role="main">
-
+      
+      <div id="hundreds" class="demo-number">100</div>
+    	<div id="thousands" class="demo-number">1000</div>
+    	<div id="hundreds_of_thousands" class="demo-number">100100</div>
+    	<div id="hundreds_of_thousands_with_decimal" class="demo-number">100100.00</div>
+    	<div id="hundreds_of_thousands_with_dollar" class="demo-number">$100100.00</div>
+    	<div id="millions" class="demo-number">1100100</div>
+      
     </div>
     <footer>
-
+      
     </footer>
-  </div> <!--! end of #container -->
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
-
-  <!-- scripts concatenated and minified via ant build script-->
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
-  <!-- end scripts-->
-
-	
-  <!-- Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-  </script>
-
-
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
+  </div>
   
-</body>
-</html>
-
-
-
-
-
-
-
-<!doctype html>
-<html id="html">
-<head>
-	<title>jQuery - Validation Test Suite</title>
-	<link rel="Stylesheet" media="screen" href="test/qunit/qunit.css" />
-	<script type="text/javascript" src="lib/jquery-1.4.4.js"></script>
-	<script type="text/javascript" src="jquery.commify.js"></script>
-</head>
-<body id="body">
-	<div id="hundreds">100</div>
-	<div id="thousands">1000</div>
-	<div id="hundreds_of_thousands">$100100.00</div>
-	<div id="millions">1100100</div>
-	
-	<script type="text/javascript">
-	    $(document).ready(function(){
-	        
-	        $('#hundreds_of_thousands').commify();
-	        $.fn.commify(9999);
-	    });
-	    
-	</script>
+  <script src="lib/jquery.js"></script>
+  <script src="jquery.commify.js"></script>
+  
 </body>
 </html>
