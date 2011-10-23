@@ -1,5 +1,5 @@
 $(function(){ // shortcut for document.ready
-    $('button').each(function(){
+    $('table').find('button').each(function(){
        var $this = $(this);
        $this.click(function(e){
            e.preventDefault();
@@ -10,10 +10,12 @@ $(function(){ // shortcut for document.ready
     });
     
     // Commify numbers with options
-    $('#with-options').submit(function(e){
+    $('form#with-options').submit(function(e){
         e.preventDefault();
-        console.log($(this).serialize());
-        var value = $.commify();
-        $('#with-options-result').text();
+        var value = $.commify($('#n').val(), {
+            prefix: $('#options_prefix').val(),
+            round: Number($('#options_round').val())
+        });
+        $('#with-options-result').text(value);
     });
 });
