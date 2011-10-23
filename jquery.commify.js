@@ -4,43 +4,27 @@
             
             $._commify_log("Called $.commify() with " + arguments.length + " option(s): " + options);
             
-            // Operating on a single value
-            if (arguments.length == 1) {
-                
-                var n;
-                n = options;
-                
-                // Let's coerce it to be a number
-                switch(typeof options) {
-                    case "string":
-                        n = Number(options);
-                }
-                
-                $._commify_log("Operating on a number: " + options);
-                
-                return n;
+            var n, options;
+            
+            // Coerce the value to a number
+            n = (typeof arguments[0] === "number") ? n : Number(arguments[0]);
+            
+            // Update the options if specified
+            options = (arguments.length > 1) ? $.extend({}, $.commify_defaults, arguments[1]) : $.commify_defaults;
+            
+            // Round the number if desired
+            if (options.round !== false) {
+                n = Math.round(n/options.round)*options.round;
             }
             
-            // Operating on a value with options
-            if (arguments.length > 1 && typeof arguments[1] == "object") {
-                
-                $._commify_log("we have options for this number: " + arguments[1]);
-                
-                var n, options;
-                
-                n = arguments[0];
-                options = $.extend({}, $.commify_defaults, arguments[1]);
-                
-                console.log(options);
-                
-                return n;
-            }
+            console.log(n);
             
+            return n;
         },
         
         commify_defaults: {
-            prefix: '$',
-            round: false
+            prefix: '',
+            round: false // Specify the nth to which you would like to round (10, 100, 1000 etc)
         },
         
         _commify_log: function(msg) {
