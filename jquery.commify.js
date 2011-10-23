@@ -6,8 +6,8 @@
             
             var n;
 
-            // Coerce the value to a number
-            n = Number(arguments[0]);
+            // Coerce the value to a string
+            n = String(arguments[0]);
             
             // Update the options if specified
             options = (arguments.length > 1) ? $.extend({}, $.commify_defaults, arguments[1]) : $.commify_defaults;
@@ -16,6 +16,8 @@
             if (options.round !== false && typeof options.round === "number") {
                 n = Math.round(n/options.round)*options.round;
             }
+            
+            
             
             return n;
         },
