@@ -26,18 +26,21 @@
                 
                 $._commify_log("we have options for this number: " + arguments[1]);
                 
-                var n;
+                var n, options;
+                
                 n = arguments[0];
+                options = $.extend({}, $.commify_defaults, arguments[1]);
+                
+                console.log(options);
                 
                 return n;
             }
             
         },
         
-        commify_defaults: function() {
-            return {
-                
-            };
+        commify_defaults: {
+            prefix: '$',
+            round: false
         },
         
         _commify_log: function(msg) {
@@ -45,6 +48,10 @@
                 console.log("$.commify: " + msg);
                 return true;
             }
+        },
+        
+        decommify: function(value) {
+            return Number(value.replace(/,/g, ""));
         }
         
     });
