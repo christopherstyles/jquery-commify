@@ -12,7 +12,7 @@ If you'd like to improve upon this, by all means create a branch and send a pull
   
     $.commify(1100); => 1,100
     $.commify(100100.00); => 100,100.00
-    $.commify("$100100.00"); => "100,100.00"  // Notice how the dollar sign was dropped here.
+    $.commify("$100100.00"); => "100,100.00"  // Notice how the dollar sign was dropped here,
                                               //Use a prefix option instead
     
     With options:
