@@ -112,22 +112,27 @@
       </table>
       
       
-      <form action="#" method="post" accept-charset="utf-8">
+      <form action="#" method="post" accept-charset="utf-8" id="with-options">
         <fieldset>
           <legend>Examples of $.commify usage with options</legend>
           <p>
             <label for="n">A number?</label>
-            <input name="round" value="10" id="n" size="4">
+            <input type="text" name="n" value="10" id="n" size="10">
           </p>
           <p>
+            <label for="prefix">Would you like a prefix?</label>
+            <input type="text" name="options[prefix]" value="$" id="options_prefix" size="1">
+          <p>
             <label for="round">Round to the nearest <em>nth</em></label>
-            <input name="options[round]" value="10" id="options_round" size="4">
+            <input type="text" name="options[round]" value="10" id="options_round" size="4">
           </p>
           <p>
             <button id="with-options">Commify</button>
           </p>
           <p>
-            Result: 
+            <div class="result-label">
+              Result: 
+            </div>
             <div id="with-options-result"></div>
           </p>
         
