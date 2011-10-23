@@ -5,19 +5,18 @@
             $._commify_log("Called $.commify() with " + arguments.length + " option(s): " + options);
             
             var base, decimal, negative, n, parts, pieces, result;
-
-            // Coerce the value to a number
-            n = Number(arguments[0]);
+            
+            // Take the first argument as the number to be commified
+            n = arguments[0];
             
             // Update the options if specified
             options = (arguments.length > 1) ? $.extend({}, $.commify_defaults, arguments[1]) : $.commify_defaults;
             
             // Round the number if a round value was specified
-            if (options.round !== false && typeof options.round === "number") {
-                n = Math.round(n/options.round)*options.round;
-            }
+            if (options.round && typeof options.round === "number")
+                n = parseInt(Math.round(n/options.round)*options.round, 10);
             
-            // Coerce the number to a string
+            // Coerce the number to a String
             n = String(n);
             
             // Split into an array
@@ -37,6 +36,7 @@
             // Break the base number into pieces
             pieces = base.split('').reverse();
             
+            // Loop over it, inserting commas for every 3
             for (var i = 0; i < pieces.length; i++) {
                 if (i != 0 && i % 3 == 0)
 			        result = ',' + result;
@@ -51,17 +51,24 @@
             if (negative)
                 result = "-" + result;
             
+            // Add a prefix if one was specified
+            if (options.prefix)
+                result = options.prefix + result;
+            
             return result;
         },
         
         commify_defaults: {
-            prefix: '',
-            round: false // Specify the nth to which you would like to round (10, 100, 1000 etc)
+            prefix: null,
+            round: null // Specify the nth to which you would like to round (10, 100, 1000 etc)
         },
         
-        _commify_log: function(msg) {
+        _commify_log: function(msg, raw) {
             if (window.console) {
-                console.log("$.commify: " + msg);
+                if (raw === true)
+                    console.log(msg);
+                else
+                    console.log("$.commify: " + msg);
                 return true;
             }
         },
@@ -69,6 +76,5 @@
         decommify: function(value) {
             return Number(value.replace(/,/g, ""));
         }
-        
     });
 })(jQuery);
