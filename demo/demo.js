@@ -8,4 +8,12 @@ $(function(){ // shortcut for document.ready
            $this.parent().next().text(commified);
        });
     });
+    
+    // Commify numbers with options
+    $('#with-options').submit(function(e){
+        e.preventDefault();
+        console.log($(this).serialize());
+        var value = $.commify();
+        $('#with-options-result').text();
+    });
 });

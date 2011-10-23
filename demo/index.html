@@ -28,7 +28,7 @@
     <div id="main" role="main">
       
       <table>
-        <caption>Examples of $.commify usage</caption>
+        <caption>Examples of $.commify usage with default options</caption>
         <thead>
           <tr>
             <th>&nbsp;</th>
@@ -101,7 +101,7 @@
           <tr>
             <td>Tens of millions</td>
             <td>
-              <div id="millions">10000000</div>
+              <div id="tens_of_millions">10000000</div>
             </td>
             <td>
               <button>-&gt;</button>
@@ -111,7 +111,27 @@
           <tr>
             <td>Hundreds of millions</td>
             <td>
-              <div id="millions">100000000</div>
+              <div id="hundreds_of_millions">100000000</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Thousands rounded to the nearest 10th</td>
+            <td>
+              <div id="thousands_rounded_to_nearest_tenth">16532</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Thousands rounded to the nearest 100th</td>
+            <td>
+              <div id="thousands_rounded_to_nearest_hundredth">16532</div>
             </td>
             <td>
               <button>-&gt;</button>
@@ -120,6 +140,29 @@
           </tr>
         </tbody>
       </table>
+      
+      
+      <form action="#" method="post" accept-charset="utf-8">
+        <fieldset>
+          <legend>Examples of $.commify usage with options</legend>
+          <p>
+            <label for="n">A number?</label>
+            <input name="round" value="10" id="n" size="4">
+          </p>
+          <p>
+            <label for="round">Round to the nearest <em>nth</em></label>
+            <input name="options[round]" value="10" id="options_round" size="4">
+          </p>
+          <p>
+            <button id="with-options">Commify</button>
+          </p>
+          <p>
+            Result: 
+            <div id="with-options-result"></div>
+          </p>
+        
+        </fieldset>
+      </form>
       
     </div>
     <footer>
