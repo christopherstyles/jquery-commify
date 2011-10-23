@@ -8,7 +8,7 @@ If you'd like to improve upon this, by all means create a branch and send a pull
 * * *
 
 
-Example usage: 
+    Example usage: 
   
     $.commify(1100); => 1,100
     $.commify(100100.00); => 100,100.00
