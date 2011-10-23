@@ -29,7 +29,7 @@
             base = parts[0];
             
             // Are we a negative?
-            negative = (Boolean(~(n.indexOf("-")))); // TODO: test the speed of this against substring(0,1) === "-"
+            negative = (Boolean(~(n.indexOf("-")))); // http://jsperf.com/tilde-instead-of-strict-inequality
             if (negative) 
                 base = base.replace('-', '');
             
