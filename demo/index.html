@@ -23,9 +23,24 @@
     #main {
       padding: 25px;
     }
-    .demo-number {
+    table {
       
     }
+      caption, th {
+        font-family: Georgia, Times, sans-serif;
+      }
+      caption {
+        font-style: italic;
+      }
+      th, td, caption {
+        text-align: left;
+      }
+      th, td {
+        padding: 0 15px 0 0;
+      }
+      tr:first-child {
+        border-bottom: 1px dotted #ccc;
+      }
     .cf:before, .cf:after { content: ""; display: table; }
     .cf:after { clear: both; }
     .cf { zoom: 1; }
@@ -41,12 +56,99 @@
     </header>
     <div id="main" role="main">
       
-      <div id="hundreds" class="demo-number">100</div>
-    	<div id="thousands" class="demo-number">1000</div>
-    	<div id="hundreds_of_thousands" class="demo-number">100100</div>
-    	<div id="hundreds_of_thousands_with_decimal" class="demo-number">100100.00</div>
-    	<div id="hundreds_of_thousands_with_dollar" class="demo-number">$100100.00</div>
-    	<div id="millions" class="demo-number">1100100</div>
+      <table>
+        <caption>Examples of commify usage</caption>
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Input</th>
+            <th>&nbsp;</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hundreds</td>
+            <td>
+              <div id="hundreds">100</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Thousands</td>
+            <td>
+              <div id="thousands">1000</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Hundreds of thousands</td>
+            <td>
+              <div id="hundreds_of_thousands">100100</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Hundreds of thousands, with decimal</td>
+            <td>
+              <div id="hundreds_of_thousands_with_decimal">100100.00</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Hundreds of thousands with a dollar symbol</td>
+            <td>
+              <div id="hundreds_of_thousands_with_dollar">$100100.00</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Millions</td>
+            <td>
+              <div id="millions">1000000</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Tens of millions</td>
+            <td>
+              <div id="millions">10000000</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Hundreds of millions</td>
+            <td>
+              <div id="millions">100000000</div>
+            </td>
+            <td>
+              <button>-&gt;</button>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
       
     </div>
     <footer>
