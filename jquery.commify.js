@@ -12,12 +12,10 @@
             // Update the options if specified
             options = (arguments.length > 1) ? $.extend({}, $.commify_defaults, arguments[1]) : $.commify_defaults;
             
-            // Round the number if desired
-            if (options.round !== false) {
+            // Round the number if passed
+            if (options.round !== false && typeof options.round === "number") {
                 n = Math.round(n/options.round)*options.round;
             }
-            
-            console.log(n);
             
             return n;
         },
