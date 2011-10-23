@@ -9,6 +9,9 @@
             // Take the first argument as the number to be commified
             n = arguments[0];
             
+            // Clean out anything we don't want
+            n = String(n).replace(/[^\d\.]/g, "");
+            
             // Update the options if specified
             options = (arguments.length > 1) ? $.extend({}, $.commify_defaults, arguments[1]) : $.commify_defaults;
             
