@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>jQuery - Commify Test Suite</title>
+	<link rel="stylesheet" media="screen" href="qunit/qunit.css" />
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="qunit/qunit.js"></script>
+	<script type="text/javascript" src="../jquery.commify.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+</head>
+<body id="body">
+	<h1 id="qunit-header">
+		<a href="?jquery=1.3.2">jQuery 1.3.2</a>
+		<a href="?jquery=1.4.2">jQuery 1.4.2</a>
+		<a href="?jquery=1.4.4">jQuery 1.4.4</a>
+		<a href="?jquery=1.5.2">jQuery 1.5.2</a>
+		<a href="?jquery=1.6.1">jQuery 1.6.1</a>
+		<a href="?jquery=git">jQuery Latest (git)</a>
+		</h1>
+	<div>
+	</div>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+
+	<!-- Test HTML -->
+	
+	<div id="qunit-fixture">
+		
+		<div id="hundreds">100</div>
+		<div id="thousands">1000</div>
+		<div id="hundreds_of_thousands">100100</div>
+		<div id="hundreds_of_thousands_with_decimal">100100.00</div>
+		<div id="hundreds_of_thousands_with_dollar">$100100.00</div>
+		<div id="millions">1100100</div>
+		<div id="tens_of_millions">10000000</div>
+		<div id="hundreds_of_millions">100000000</div>
+		<div id="thousands_rounded_to_nearest_tenth">16532</div>
+		<div id="thousands_rounded_to_nearest_hundredth">16532</div>
+		
+	</div>
+
+</body>
+</html>

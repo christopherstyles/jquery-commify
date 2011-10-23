@@ -4,10 +4,10 @@
             
             $._commify_log("Called $.commify() with " + arguments.length + " option(s): " + options);
             
-            var n, options;
-            
+            var n;
+
             // Coerce the value to a number
-            n = (typeof arguments[0] === "number") ? n : Number(arguments[0]);
+            n = Number(arguments[0]);
             
             // Update the options if specified
             options = (arguments.length > 1) ? $.extend({}, $.commify_defaults, arguments[1]) : $.commify_defaults;
