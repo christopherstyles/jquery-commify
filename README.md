@@ -19,4 +19,8 @@ If you'd like to improve upon this, by all means create a branch and send a pull
       
       $.commify("$100100.00", { prefix:'$' }); => "$100,100.00"
       $.commify("$100175.00", { round:10 }); => "$100,180.00"
-      $.commify("$100175.00", { round:100 }); => "$100,200.00"
+      $.commify("$100175.00", { round:100 }); => "100,200.00"
+      $.commify("$100175.00", { 
+          prefix: '$',
+          round:100
+        }); => "$100,200.00"
