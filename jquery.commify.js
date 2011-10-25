@@ -14,8 +14,6 @@
     $.extend({
         commify: function( options ) {
             
-            $._commify_log("Called $.commify() with " + arguments.length + " option(s): " + options);
-            
             var base, decimal, negative, n, parts, pieces, result;
             
             // Take the first argument as the number to be commified
