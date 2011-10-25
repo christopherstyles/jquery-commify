@@ -41,10 +41,10 @@
             
             // Loop over it, inserting commas for every 3
             for (var i = 0; i < pieces.length; i++) {
-                if (i != 0 && i % 3 == 0)
+                if (i !== 0 && i % 3 === 0)
 			        result = ',' + result;
 			    result = pieces[i] + result;
-            };
+            }
             
             // Get the decimal if there is one
             decimal = (parts.length > 1) ? ("." + parts[1]) : "";
