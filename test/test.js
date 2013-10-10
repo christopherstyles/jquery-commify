@@ -68,4 +68,9 @@ $(document).ready(function() {
     n = 1155;
     equal($.commify(n, {round:1000}), "1,000");
   });
+
+  test("commify a negative number", function() {
+    n = -1155;
+    equal($.commify(n), "-1,155");
+  });
 });
