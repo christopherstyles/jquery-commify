@@ -54,17 +54,37 @@ $(document).ready(function() {
   });
 
   // Rounding
-  test("commify a number in the thousands and round up to the nearest 10th", function() {
+  test("commify a number in the thousands_with_decimal and round up to the nearest 100th", function() {
+    n = 1155.15794;
+    equal($.commify(n, {round:0.01}), "1,155.16");
+  });
+
+  test("commify a number in the thousands_with_decimal and round up to the nearest 10th", function() {
+    n = 1155.15794;
+    equal($.commify(n, {round:0.1}), "1,155.2");
+  });
+
+  test("commify a number in the thousands_with_decimal and round up to the nearest 1", function() {
+    n = 1155.15794;
+    equal($.commify(n, {round:1}), "1,155");
+  });
+
+  test("commify a number in the thousands_with_decimal and round up to the nearest 10", function() {
+    n = 1155.15794;
+    equal($.commify(n, {round:10}), "1,160");
+  });
+
+  test("commify a number in the thousands and round up to the nearest 10", function() {
     n = 1155;
     equal($.commify(n, {round:10}), "1,160");
   });
 
-  test("commify a number in the thousands and round up to the nearest 100th", function() {
+  test("commify a number in the thousands and round up to the nearest 100", function() {
     n = 1155;
     equal($.commify(n, {round:100}), "1,200");
   });
 
-  test("commify a number in the thousands and round up to the nearest 1000th", function() {
+  test("commify a number in the thousands and round up to the nearest 1000", function() {
     n = 1155;
     equal($.commify(n, {round:1000}), "1,000");
   });

@@ -26,8 +26,9 @@
             options = (arguments.length > 1) ? $.extend({}, $.commify_defaults, arguments[1]) : $.commify_defaults;
             
             // Round the number if a round value was specified
+            // Note it can be an odd rounding... eg decimals
             if (options.round && typeof options.round === "number")
-                n = parseInt(Math.round(n/options.round)*options.round, 10);
+                n = (Math.round(n/options.round))/(1/options.round);
             
             // Coerce the number to a String
             n = String(n);
