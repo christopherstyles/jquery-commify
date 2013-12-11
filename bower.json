@@ -1,0 +1,29 @@
+{
+  "name": "jquery-commify",
+  "version": "1.0.0",
+  "homepage": "https://github.com/christopherstyles/jquery-commify",
+  "authors": [
+    "Christopher Styles <christopherstyles@gmail.com>"
+  ],
+  "description": "jQuery extensions for commifying a string.",
+  "main": "jquery.commify.js",
+  "keywords": [
+    "jquery",
+    "commas",
+    "commify",
+    "number",
+    "number_with_delimiter",
+    "number_with_precision",
+    "number_to_human",
+    "human",
+    "thousands"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
